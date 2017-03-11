@@ -6,8 +6,8 @@ php:
   - hhvm
 
 before_script:
+  - phpunit --version
   - composer install --no-interaction --prefer-source
-  - composer global require phpunit/phpunit ~5.7
 
 script:
   - phpunit
