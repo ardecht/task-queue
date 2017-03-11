@@ -1,0 +1,19 @@
+{
+    "name": "ardecht/task-queue",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ardecht",
+            "email": "ardecht@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Ardecht\\TaskQueue\\": "src/",
+            "Ardecht\\TaskQueue\\Test\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable"
+}
