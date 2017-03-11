@@ -8,10 +8,19 @@
             "email": "ardecht@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
     "autoload": {
         "psr-4": {
-            "Ardecht\\TaskQueue\\": "src/",
+            "Ardecht\\TaskQueue\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Ardecht\\TaskQueue\\Test\\": "tests/"
         }
     },

@@ -10,4 +10,4 @@ before_script:
   - composer install --no-interaction --prefer-source
 
 script:
-  - echo Build!
+  - phpunit
