@@ -2,6 +2,7 @@
 
 namespace Ardecht\TaskQueue;
 
-class Queue {
+class Queue
+{
     //
 }
