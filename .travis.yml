@@ -6,8 +6,7 @@ php:
   - hhvm
 
 before_script:
-  - phpunit --version
   - composer install --no-interaction --prefer-source
 
 script:
-  - phpunit
+  - ./vendor/bin/phpunit
