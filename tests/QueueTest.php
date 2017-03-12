@@ -53,7 +53,9 @@ class QueueTest extends \PHPUnit_Framework_TestCase
 
     public function testCanNotInitializeQueueWithoutStorage()
     {
-        $this->expectException('TypeError');
-        $queue = new Queue(null);
+        if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
+            $this->expectException('TypeError');
+            $queue = new Queue(null);
+        }
     }
 }

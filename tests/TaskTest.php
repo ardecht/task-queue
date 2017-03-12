@@ -37,7 +37,7 @@ class TaskTest extends \PHPUnit_Framework_TestCase
         $task = new Task(function () {
         });
 
-        $hash = md5(__FILE__.':37-'.serialize([])); // Checkout line number!
+        $hash = md5(__FILE__.':38-'.serialize([])); // Checkout line number!
 
         $this->assertEquals($hash, $task->getHash());
     }
