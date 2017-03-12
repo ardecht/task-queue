@@ -88,6 +88,15 @@ final class Task
     }
 
     /**
+     * Get task hash
+     * @return string
+     */
+    public function getHash()
+    {
+        return $this->hash;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()
