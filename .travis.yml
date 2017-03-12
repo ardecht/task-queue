@@ -9,7 +9,7 @@ before_script:
 
 script:
   - ./vendor/bin/php-cs-fixer fix --dry-run
-  - ./vendor/bin/phpunit
+  - ./vendor/bin/phpunit --testdox
 
 notifications:
   - email: false
