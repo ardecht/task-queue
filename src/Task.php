@@ -30,6 +30,11 @@ final class Task
     private $id = null;
 
     /**
+     * @var mixed
+     */
+    private $result = null;
+
+    /**
      * Task constructor.
      * @param callable $callable
      * @param array $arguments
@@ -113,11 +118,20 @@ final class Task
     }
 
     /**
+     * @return mixed
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+    /**
      * Run callable with arguments
      * @return mixed
      */
     public function run()
     {
-        return call_user_func_array($this->callable, $this->arguments);
+        $this->result = call_user_func_array($this->callable, $this->arguments);
+        return $this->result;
     }
 }

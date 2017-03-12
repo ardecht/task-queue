@@ -29,7 +29,7 @@ class TaskTest extends \PHPUnit_Framework_TestCase
 
         $queue->enqueue($task);
 
-        $this->assertEquals($closure(5, 10), $queue->dequeueAndRun());
+        $this->assertEquals($closure(5, 10), $queue->dequeueAndRun()->getResult());
     }
 
     public function testGenerateHashForTask()

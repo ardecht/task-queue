@@ -115,13 +115,13 @@ final class Queue
             throw new Exception('Can not suspend task in storage!');
         }
 
-        $result = $task->run();
+        $task->run();
 
         if (!$this->storage->detach($task)) {
             throw new Exception('Can not detach task from storage!');
         }
 
-        return $result;
+        return $task;
     }
 
     /**
