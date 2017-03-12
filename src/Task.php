@@ -25,6 +25,11 @@ final class Task
     private $hash;
 
     /**
+     * @var mixed
+     */
+    private $id = null;
+
+    /**
      * Task constructor.
      * @param callable $callable
      * @param array $arguments
@@ -80,6 +85,22 @@ final class Task
     public function getPriority()
     {
         return $this->priority;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     /**

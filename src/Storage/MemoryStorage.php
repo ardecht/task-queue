@@ -18,10 +18,15 @@ class MemoryStorage implements IStorage
      */
     public function attach(Task $task)
     {
-        $hash = spl_object_hash($task);
+        $id = $task->getId();
 
-        if (!isset($this->tasks[$hash])) {
-            $this->tasks[$hash] = $task;
+        if (!$id) {
+            $id = spl_object_hash($task);
+            $task->setId($id);
+        }
+
+        if (!isset($this->tasks[$id])) {
+            $this->tasks[$id] = $task;
             return true;
         }
 
@@ -35,10 +40,10 @@ class MemoryStorage implements IStorage
      */
     public function detach(Task $task)
     {
-        $hash = spl_object_hash($task);
+        $id = $task->getId();
 
-        if (isset($this->tasks[$hash])) {
-            unset($this->tasks[$hash]);
+        if ($id && isset($this->tasks[$id])) {
+            unset($this->tasks[$id]);
             return true;
         }
 
