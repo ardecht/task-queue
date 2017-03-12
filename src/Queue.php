@@ -38,6 +38,8 @@ final class Queue
     {
         $tasks = $this->storage->get();
 
+        $this->tasks = new SplPriorityQueue(); // clear queue
+
         foreach ($tasks as $task) {
             if ($suspend) {
                 if (!$this->storage->suspend($task)) {

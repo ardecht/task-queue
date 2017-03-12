@@ -58,4 +58,17 @@ class QueueTest extends \PHPUnit_Framework_TestCase
             $queue = new Queue(null);
         }
     }
+
+    public function testAddTaskToQueueThenLoadTasksFromStorageShouldBeTheSame()
+    {
+        $storage = new MemoryStorage();
+        $queue = new Queue($storage);
+
+        $queue->newTask(function () {
+        });
+
+        $queue->load();
+
+        $this->assertEquals(1, $queue->count());
+    }
 }
