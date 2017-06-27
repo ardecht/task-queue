@@ -63,6 +63,18 @@ class MemoryStorage implements IStorage
     }
 
     /**
+     * Unsuspend task in storage
+     * @param Task $task
+     * @return mixed
+     */
+    public function unsuspend(Task $task)
+    {
+      // Not used
+
+      return true;
+    }
+
+    /**
      * Get tasks that can be performed
      * @return mixed
      */

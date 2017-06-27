@@ -28,6 +28,13 @@ interface IStorage
     public function suspend(Task $task);
 
     /**
+     * Unsuspend task in storage
+     * @param Task $task
+     * @return mixed
+     */
+    public function unsuspend(Task $task);
+
+    /**
      * Get tasks that can be performed
      * @return mixed
      */
